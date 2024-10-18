@@ -7,10 +7,10 @@ public class Rider implements Runnable {
         
             SharedResources.mutex.acquire();
             SharedResources.riders++;
-            waitingNumber = SharedResources.riders;
+            SharedResources.riderId++;
+            waitingNumber = SharedResources.riderId;
+            System.out.println("Rider " + waitingNumber + " has entered. Total waiting riders: " + SharedResources.riders);
             SharedResources.mutex.release();
-
-            System.out.println("Rider " + waitingNumber + " is waiting for the bus.");
 
             SharedResources.bus.acquire();
             SharedResources.multiplex.release();

@@ -15,7 +15,7 @@ public class BusProvider implements Runnable{
             busThread.start();
 
             try{
-                float meanArrivalTime = 30000f;
+                float meanArrivalTime = 60000f;
                 float lambda = 1 / meanArrivalTime;
                 Thread.sleep(Math.round(-Math.log(1 - rand.nextFloat()) / lambda));
             }
