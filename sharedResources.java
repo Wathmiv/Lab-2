@@ -1,6 +1,6 @@
 import java.util.concurrent.Semaphore;
 
-public class sharedResources {
+public class SharedResources {
     public static int riders=0;
 
     public static Semaphore mutex = new Semaphore(1);
@@ -11,5 +11,4 @@ public class sharedResources {
 
     public static Semaphore allAboard = new Semaphore(0);
 
-    
 }
